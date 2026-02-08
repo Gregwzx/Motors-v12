@@ -1,6 +1,6 @@
 'use client';
 
-import VehicleCard from './components/CarsCard.jsx';
+import CarsCard from './CarsCard';
 import styles from './FeaturedCars.module.css';
 
 export default function FeaturedCars() {
@@ -84,6 +84,7 @@ export default function FeaturedCars() {
               Seleção premium dos melhores veículos de luxo e performance disponíveis
             </p>
           </div>
+
           <div className={styles.filters}>
             <button className={`${styles.filterButton} ${styles.filterActive}`}>Todos</button>
             <button className={styles.filterButton}>SUVs</button>
@@ -95,7 +96,7 @@ export default function FeaturedCars() {
 
         <div className={styles.grid}>
           {vehicles.map((vehicle) => (
-            <VehicleCard key={vehicle.id} vehicle={vehicle} />
+            <CarsCard key={vehicle.id} vehicle={vehicle} />
           ))}
         </div>
 
@@ -103,7 +104,13 @@ export default function FeaturedCars() {
           <a href="#veiculos" className={styles.viewAllButton}>
             Ver Todos os Veículos
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </a>
         </div>
@@ -116,4 +123,3 @@ export default function FeaturedCars() {
     </section>
   );
 }
-
