@@ -1,9 +1,9 @@
 'use client';
 
-import VehicleCard from './VehicleCard';
-import styles from './FeaturedVehicles.module.css';
+import VehicleCard from './components/CarsCard.jsx';
+import styles from './FeaturedCars.module.css';
 
-export default function FeaturedVehicles() {
+export default function FeaturedCars() {
   const vehicles = [
     {
       id: 1,

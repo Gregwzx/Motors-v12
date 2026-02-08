@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './VehicleCard.module.css';
+import styles from './CarsCard.module.css';
 
 export default function VehicleCard({ vehicle }) {
   return (

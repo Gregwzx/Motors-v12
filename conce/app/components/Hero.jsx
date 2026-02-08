@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from './Hero.module.css';
+import styles from './Hero.modules.css';
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
