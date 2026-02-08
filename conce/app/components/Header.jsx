@@ -41,7 +41,7 @@ export default function Header() {
 
         <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}>
           {menuItems.map((item, index) => (
-            
+            <a
               key={item.href}
               href={item.href}
               className={styles.navLink}
