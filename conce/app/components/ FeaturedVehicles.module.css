@@ -1,0 +1,221 @@
+.section {
+  position: relative;
+  background: linear-gradient(to bottom, var(--branco) 0%, var(--cinza-claro) 100%);
+  overflow: hidden;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.headerContent {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--vermelho-gourmet);
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.subtitle::before,
+.subtitle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background: var(--vermelho-gourmet);
+}
+
+.subtitle::before {
+  left: 0;
+}
+
+.subtitle::after {
+  right: 0;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--azul-oceano);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: var(--cinza-escuro);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: 0.75rem 2rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--branco);
+  color: var(--azul-oceano);
+  border: 2px solid var(--cinza-medio);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filterButton:hover {
+  border-color: var(--vermelho-gourmet);
+  color: var(--vermelho-gourmet);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.filterActive {
+  background: linear-gradient(135deg, var(--vermelho-gourmet) 0%, var(--vermelho-gourmet-escuro) 100%);
+  color: var(--branco);
+  border-color: var(--vermelho-gourmet);
+}
+
+.filterActive:hover {
+  color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(139, 38, 53, 0.3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.footer {
+  text-align: center;
+}
+
+.viewAllButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: var(--azul-oceano);
+  color: var(--branco);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 61, 92, 0.2);
+}
+
+.viewAllButton:hover {
+  background: var(--azul-oceano-escuro);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 61, 92, 0.3);
+  gap: 1rem;
+}
+
+.backgroundDecor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.decorShape1 {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 38, 53, 0.05) 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30px, -30px) rotate(180deg);
+  }
+}
+
+.decorShape2 {
+  position: absolute;
+  bottom: 20%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 61, 92, 0.05) 0%, transparent 70%);
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .filters {
+    gap: 0.75rem;
+  }
+
+  .filterButton {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .headerContent {
+    margin-bottom: 2rem;
+  }
+
+  .subtitle::before,
+  .subtitle::after {
+    display: none;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filterButton {
+    width: 100%;
+  }
+}
